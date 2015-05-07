@@ -1,1 +1,13 @@
-
+{
+  "type"   : "package",
+  "package": {
+    "name"   : "studxxx/shopping-cart-component",
+    "type"   : "component",
+    "version": "v0.9",
+    "source" : {
+      "url"  : "https://github.com/studxxx/shopping-cart-component.git",
+      "type" : "git",
+      "reference": "v0.9"
+    }
+  }
+}
