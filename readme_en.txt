@@ -1,44 +1,43 @@
-Shopping Cart
-=============
+# Shopping Cart
+
 Provides shpping cart functionality for models.
 
 Cart is a container object that holds items collection and have handy methods to work with it.
 
 It uses user session as a cart data storage.
 
-Installing and configuring
---------------------------
+## Installing and configuring
 
 ### 1 way: Registration in the config file
 Add to `protected/config/main.php`:
 
-```
+```php
 <?php
-'import'=>array(
-    'ext.yiiext.components.shoppingCart.*'
-),
-
-'components' => array(
-  'shoppingCart' =>
-    array(
-        'class' => 'ext.yiiext.components.shoppingCart.EShoppingCart',
-    ),
-)
+return [
+    'import' => [
+        'ext.yiiext.components.shoppingCart.*'
+    ],
+    
+    'components' => [
+        'shoppingCart' => [
+            'class' => 'ext.yiiext.components.shoppingCart.EShoppingCart',
+        ],
+    ]
+];
 ```
 
 ### 2 way: Registration by necessity
 
-~~~
-[php]
-$cart = Yii::createComponent(array(
-	'class' => 'ext.yiiext.components.shoppingCart.EShoppingCart'
-));
+```php
+$cart = Yii::createComponent([
+    'class' => 'ext.yiiext.components.shoppingCart.EShoppingCart'
+]);
 //Important!
 $cart->init();
 
 $book = Book::model()->findByPk(1);
 $cart->put($book);
-~~~
+```
 
 Preparing a model
 -----------------
